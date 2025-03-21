@@ -65,20 +65,22 @@ function ValidarEmail(){
 } 
 
 
+    let MensajeFinal = document.getElementById("TextoBoton");
+    document-getElementById("formulario").addEventListener("submit", function(event){
+        event.preventDefault()
+        let NombreOk=ValidarNombre();
+        let ContraseñaOk=ValidarContraseña();
+        let ContraseñaConfOk=ConfirmarContraseña();
+        let EmailOk=ValidarEmail();
+    if(!NombreOk || !ContraseñaOk || !ContraseñaConfOk || !EmailOk)
+    {
+        MensajeFinal.innerText = "";
+    }
+    else{
+        MensajeFinal.innerText = "Se envio el formulario correctamente!";
+    }
+});
+    
+    
 
-function ValidarBoton(){
-    let FormEnviado = document.getElementById ("TextoBoton");
-    let NombreOk=ValidarNombre();
-    let ContraseñaOk=ValidarContraseña();
-    let ContraseñaConfOk=ConfirmarContraseña();
-    let EmailOk=ValidarEmail();
-if(NombreOk && ContraseñaOk && ContraseñaConfOk && EmailOk)
-{
-     FormEnviado.innerText = "Se envio el formulario correctamente!";
-}
-else{
-    
-}
-    
-}
 
