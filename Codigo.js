@@ -28,7 +28,7 @@ function ValidarContraseña()
     }
     else{
         mensajeErrorContraseña.innerHTML="";
-        return false;
+        return true;
     }
     
 }
@@ -64,22 +64,19 @@ function ValidarEmail(){
 	}
 } 
 
-
-    let MensajeFinal = document.getElementById("TextoBoton");
-    document-getElementById("formulario").addEventListener("submit", function(event){
-        event.preventDefault()
+    function MensajeFinal(){
         let NombreOk=ValidarNombre();
         let ContraseñaOk=ValidarContraseña();
         let ContraseñaConfOk=ConfirmarContraseña();
         let EmailOk=ValidarEmail();
-    if(!NombreOk || !ContraseñaOk || !ContraseñaConfOk || !EmailOk)
+    if(NombreOk==false || ContraseñaOk==false || ContraseñaConfOk==false || EmailOk==false )
     {
-        MensajeFinal.innerText = "";
+         alert('Tenes que completar todos los campos y cumplir con todos los requisitos');
     }
     else{
-        MensajeFinal.innerText = "Se envio el formulario correctamente!";
+        alert('El formulario se envio correctamente!!');
     }
-});
+};
     
     
 
